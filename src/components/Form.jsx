@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 function Form({ fetchWeather }) {
-  const searchKey = useRef();
+  const [key ,setKey] = useState("");
   const addSearchKey = () => {
-    const key = searchKey.current.value;
+    // const key = searchKey.current.value;
     console.log(key);
     fetchWeather(key);
   };
@@ -11,9 +11,11 @@ function Form({ fetchWeather }) {
     <div className="w-100  d-flex  justify-content-center mt-3 ">
       <input
         className="form-control ms-5 "
-        ref={searchKey}
         placeholder="Enter Country ..."
         type="text"
+        onChange={(e)=>{
+          setKey(e.target.value);
+        }}
       />
       <input
         type="button"

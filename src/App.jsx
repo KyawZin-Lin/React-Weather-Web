@@ -1,26 +1,29 @@
 import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import Form from "./components/Form";
 import Card from "./components/Card";
 import { api, apiKey } from "./api/api";
 
+
 function App() {
   const [city, setCity] = useState("Yangon");
   const [data, setData] = useState({});
-  const fetchWeatherApi = async function (searchKey) {
-    if (searchKey !== undefined) {
-      setCity(searchKey);
+
+  
+  const fetchWeatherApi = async function (key) {
+    if (key !== undefined) {
+      setCity(key);
     }
-    const res = await api.get(`weather?q=${city}&appid=${apiKey}`);
-    setData(res.data);
+
+      const res = await api.get(`weather?q=${city}&appid=${apiKey}`);
+      setData(res.data);
   };
 
   useEffect(() => {
     fetchWeatherApi();
   }, [city]);
 
+  
   // fetchWeatherApi();
   // console.log(data);
   return (
