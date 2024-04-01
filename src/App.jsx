@@ -24,8 +24,7 @@ function App() {
   }, [city]);
 
   
-  // fetchWeatherApi();
-  // console.log(data);
+
   return (
     <div className="d-flex mw-100 min-vh-100 justify-content-center align-items-center">
       <div className=" w-75 shadow-lg bg-light gap-4">

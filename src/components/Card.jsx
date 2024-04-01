@@ -12,7 +12,7 @@ function Card({ data }) {
       clearInterval(interval);
     };
   }, []);
-  console.log(data);
+
   if (JSON.stringify(data) !== "{}") {
     return (
       <div className="d-flex flex-column gap-2 align-items-center">

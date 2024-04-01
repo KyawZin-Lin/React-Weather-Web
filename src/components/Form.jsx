@@ -4,7 +4,6 @@ function Form({ fetchWeather }) {
   const [key ,setKey] = useState("");
   const addSearchKey = () => {
     // const key = searchKey.current.value;
-    console.log(key);
     fetchWeather(key);
   };
   return (
